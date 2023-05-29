@@ -2,6 +2,9 @@ from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 import torch
 import gradio as gr
 
+tokenizer = AutoTokenizer.from_pretrained("microsoft/GODEL-v1_1-base-seq2seq")
+model = AutoModelForSeq2SeqLM.from_pretrained("microsoft/GODEL-v1_1-base-seq2seq")
+
 def predict(input, history=[]):
 
     instruction = 'Instruction: given a dialog context, you need to response empathically'
